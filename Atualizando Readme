@@ -1,0 +1,15 @@
+Projeto de API para Autenticação com JWT
+Este projeto consiste em uma API RESTful desenvolvida em Java com Spring Boot para gerenciar a autenticação e autorização de usuários utilizando JSON Web Tokens (JWT). A aplicação serve como um back-end robusto e seguro para sistemas que necessitam de controle de acesso.
+
+O que este trabalho entrega
+Este projeto implementa um sistema completo de autenticação e autorização, oferecendo as seguintes funcionalidades:
+
+- Cadastro de Usuários: Endpoint público para que novos usuários possam se registrar na plataforma.
+- Autenticação de Usuários: Endpoint de login que valida as credenciais (e-mail e senha) e, em caso de sucesso, gera um token de acesso.
+- Geração de Token JWT: Após o login, a API gera um token JWT que contém informações do usuário e suas permissões. Este token deve ser enviado no cabeçalho de autorização (Authorization: Bearer <token>) para acessar rotas protegidas.
+- Controle de Acesso Baseado em Papéis (Roles): O sistema diferencia usuários comuns (ROLE_USER) de administradores (ROLE_ADMIN), permitindo que certos endpoints sejam acessíveis apenas por usuários com o papel adequado.
+- Validação de Token: A API intercepta as requisições para rotas protegidas, validando a assinatura e a expiração do token JWT para garantir a segurança.
+- Endpoints Protegidos: Foram criados endpoints de exemplo para demonstrar o funcionamento do controle de acesso:
+Uma rota pública, acessível por todos.
+Uma rota para usuários autenticados (com qualquer papel).
+Uma rota restrita apenas a administradores.
